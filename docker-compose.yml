@@ -1,17 +1,21 @@
-version: '3'
+version: '3.7'
 
 services:
   pritunl:
-    image: 'jippi/pritunl:latest'
+    build:
+      context: .
+      args:
+        - MONGODB_VERSION=${MONGODB_VERSION}
     privileged: true
     ports:
-      - '80:80'
       - '443:443'
       - '1194:1194/udp'
       - '1194:1194/tcp'
     volumes:
       - 'pritunl_data:/var/lib/pritunl'
       - 'pritunl_db:/var/lib/mongodb'
+    environment:
+      - MONGODB_VERSION=${MONGODB_VERSION}
 
 volumes:
   pritunl_data:

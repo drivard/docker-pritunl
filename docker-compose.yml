@@ -17,6 +17,7 @@ services:
       - './data/mongodb:/var/lib/mongodb'
     environment:
       - MONGODB_VERSION=${MONGODB_VERSION}
+    restart: always
 
 volumes:
   pritunl_data:

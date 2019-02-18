@@ -14,7 +14,10 @@ EXPOSE 80
 EXPOSE 443
 EXPOSE 1194
 EXPOSE 1194/udp
+EXPOSE 8443
+EXPOSE 8444
 
 ENTRYPOINT ["/bin/start-pritunl"]
 
 CMD ["/usr/bin/tail", "-f","/var/log/pritunl.log"]
+

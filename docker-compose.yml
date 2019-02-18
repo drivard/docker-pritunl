@@ -10,8 +10,9 @@ services:
     privileged: true
     ports:
       # - 80:80
-      - '8443:443'
-      - '1194:1194/tcp'
+      - '8443:8443'
+      - '8444:8444'
+      # - '1194:1194/tcp'
     volumes:
       - './data/pritunl:/var/lib/pritunl'
       - './data/mongodb:/var/lib/mongodb'
@@ -24,3 +25,4 @@ volumes:
     driver: local
   pritunl_db:
     driver: local
+

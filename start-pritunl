@@ -44,10 +44,12 @@ if [ -z "$PRITUNL_DONT_WRITE_CONFIG" ]; then
         "bind_addr": "$PRITUNL_BIND_ADDR",
         "debug": $PRITUNL_DEBUG,
         "www_path": "/usr/share/pritunl/www",
-        "local_address_interface": "auto"
+        "local_address_interface": "auto",
+        "port": 8444
     }
 EOF
 
 fi
 
 exec /usr/bin/pritunl start -c /etc/pritunl.conf
+

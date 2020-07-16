@@ -12,6 +12,7 @@ services:
       # - 80:80
       - '8445:8443'
       - '8444:8444'
+      - '8446:8446'
       # - '1194:1194/tcp'
     volumes:
       - './data/pritunl:/var/lib/pritunl'
@@ -19,10 +20,3 @@ services:
     environment:
       - MONGODB_VERSION=${MONGODB_VERSION}
     restart: always
-
-volumes:
-  pritunl_data:
-    driver: local
-  pritunl_db:
-    driver: local
-
